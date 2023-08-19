@@ -14,17 +14,11 @@ PKG_BUILD_FLAGS:=no-mips16 gc-sections no-lto
 
 PKG_BUILD_PARALLEL:=1
 
-PKG_BASE:=$(subst $(space),.,$(wordlist 1,2,$(subst .,$(space),$(PKG_VERSION))))
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:= \
-	http://www.openssl.org/source/ \
-	http://www.openssl.org/source/old/$(PKG_BASE)/ \
-	http://ftp.fi.muni.cz/pub/openssl/source/ \
-	http://ftp.fi.muni.cz/pub/openssl/source/old/$(PKG_BASE)/ \
-	ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source/ \
-	ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source/old/$(PKG_BASE)/
-
-PKG_HASH:=1761d4f5b13a1028b9b6f3d4b8e17feb0cedc9370f6afe61d7193d2cdce83323
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/quictls/openssl.git
+PKG_SOURCE_VERSION:=c960369e667c985c0e95a7b071e7df0c9360cef6
+PKG_MIRROR_HASH:=91bc41b1d1bdd31c58e5a13ed231224dac778df5927ddf1a6d4ae8afbf511337
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILES:=LICENSE
